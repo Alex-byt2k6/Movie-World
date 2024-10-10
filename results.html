@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results - Movie World</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Common styles for both pages */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #00bfff; /* Light blue color */
+            text-shadow: 
+                0 0 5px #00bfff, 
+                0 0 10px #00bfff, 
+                0 0 20px #00bfff,
+                0 0 5px black, 
+                0 0 10px black; /* Black stroke */
+        }
+        .search-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search-bar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        #search-bar:focus {
+            border-color: blue;
+            box-shadow: 0 0 10px blue;
+        }
+        .search-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: 2px solid blue;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .search-btn:hover {
+            background-color: blue;
+            color: white;
+        }
+        .result-card {
+            background-color: #222;
+            border: 1px solid #444;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 15px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        .result-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #111;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <input type="text" id="search-bar" placeholder="Search for a series..." oninput="searchSeries()">
+        <button class="search-btn">Search</button>
+    </section>
+
+    <div id="results-container"></div>
+
+    <footer>
+        <p>© 2024 Movie World. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Get the query from the URL
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('query');
+
+        // Mock series data for demonstration (replace with actual data)
+        const seriesData = [
+            { name: "Series 1", img: "series1.jpg", trailer: "trailer1.mp4" },
+            { name: "Series 2", img: "series2.jpg", trailer: "trailer2.mp4" },
+            { name: "Series 3", img: "series3.jpg", trailer: "trailer3.mp4" },
+        ];
+
+        // Display the results
+        const resultsContainer = document.getElementById('results-container');
+        const filteredResults = seriesData.filter(series => 
+            series.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+        if (filteredResults.length > 0) {
+            filteredResults.forEach(series => {
+                const card = document.createElement('div');
+                card.className = 'result-card';
+                card.innerHTML = `
+                    <img src="${series.img}" alt="${series.name}">
+                    <h3>${series.name}</h3>
+                    <a href="watch.html?trailer=${series.trailer}">Watch Now</a>
+                `;
+                resultsContainer.appendChild(card);
+            });
+        } else {
+            resultsContainer.innerHTML = `<p>No results found for "${query}".</p>`;
+        }
+    </script>
+</body>
+</html>

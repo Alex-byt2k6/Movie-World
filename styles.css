@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    background-color: #111; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    font-family: Arial, sans-serif; /* Font style */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Padding around the body */
+}
+
+/* Header Styles */
+h1 {
+    text-align: center; /* Center the header */
+    color: #ff0000; /* Bright red color for the header */
+}
+
+/* Search Container */
+#search-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the search container */
+    margin-bottom: 20px; /* Space below the search box */
+}
+
+/* Search Box */
+#search-box {
+    width: 300px; /* Width of the search box */
+    padding: 10px; /* Padding */
+    border: 1px solid #444; /* Dark border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #222; /* Darker background for input */
+    color: #fff; /* White text */
+}
+
+/* Search Button */
+#search-button {
+    background-color: #ff0000; /* Red background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-left: 5px; /* Space between input and button */
+    transition: box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Glowing effect on hover */
+#search-button:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Red glowing effect */
+}
+
+/* Suggestions Container */
+#suggestions {
+    border: 1px solid #444; /* Dark border */
+    max-height: 150px; /* Max height */
+    overflow-y: auto; /* Scroll if overflow */
+    display: none; /* Initially hidden */
+    position: absolute; /* Position suggestions absolutely */
+    background-color: #222; /* Dark background */
+    z-index: 1000; /* Above other content */
+}
+
+/* Individual Suggestion Item */
+.suggestion-item {
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: #fff; /* White text */
+}
+
+.suggestion-item:hover {
+    background-color: #ff0000; /* Red highlight on hover */
+}
+
+/* Result Item Styles */
+.result-item {
+    margin-top: 20px; /* Space above each result */
+    display: inline-block; /* Display items inline */
+    text-align: center; /* Center text */
+    width: 200px; /* Set width for result items */
+}
+
+.result-item img {
+    width: 100%; /* Make image responsive */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Watch Now Button */
+.watch-now-btn {
+    margin-top: 10px; /* Space above button */
+}
+
+.watch-now-btn button {
+    background-color: #ff0000; /* Red background */
+    color: white; /* White text */
+    padding: 10px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.watch-now-btn button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Video Player Styles */
+video {
+    width: 640px; /* Width of the video */
+    height: 360px; /* Height of the video */
+    margin-bottom: 20px; /* Space below the video */
+}

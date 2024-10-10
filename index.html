@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie World</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+    <style>
+        /* Style for title with neon glowing blue effect and black stroke */
+        h1.glow {
+            color: #00bfff; /* Light blue color */
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 
+                0 0 5px #00bfff,   /* Glow */
+                0 0 10px #00bfff,  /* Glow */
+                0 0 20px #00bfff,  /* Glow */
+                0 0 5px black,     /* Black stroke */
+                0 0 10px black;    /* Black stroke */
+        }
+
+        /* Style for search bar with black and glowing blue effect */
+        .search-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #search-bar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #search-bar:focus {
+            border-color: blue;
+            box-shadow: 0 0 10px blue;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: 2px solid blue;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        /* Style for vertical view of series list */
+        .series-list {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .series-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #222;
+            border: 1px solid #444;
+            border-radius: 10px;
+            margin: 15px 0;
+            padding: 15px;
+            text-align: center;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            color: white;
+            margin: 10px 0;
+        }
+
+        .card a.watch-now {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a.watch-now:hover {
+            background-color: darkred;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #111;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Title with Neon Glowing Effect and Black Stroke -->
+        <h1 class="glow">Movie World</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <input type="text" id="search-bar" placeholder="Search for a series..." oninput="searchSeries()">
+        <button class="search-btn">Search</button>
+    </section>
+
+    <!-- Search Results -->
+    <section id="search-results" class="search-results"></section>
+
+    <!-- Series List (Vertical View) -->
+    <section class="series-list">
+        <h2 style="color: white;">Popular Series</h2>
+        <div class="series-container">
+            <div class="card">
+                <img src="series1.jpg" alt="Series 1">
+                <h3>House of Dragons</h3>
+                <a href="watch.html?trailer=trailer1.mp4" class="watch-now">Watch Now</a>
+            </div>
+            <div class="card">
+                <img src="series2.jpg" alt="Series 2">
+                <h3>Harry Potter</h3>
+                <a href="watch.html?trailer=trailer2.mp4" class="watch-now">Watch Now</a>
+            </div>
+            <div class="card">
+                <img src="series3.jpg" alt="Series 3">
+                <h3>Game of Thrones</h3>
+                <a href="watch.html?trailer=trailer3.mp4" class="watch-now">Watch Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Movie World. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
